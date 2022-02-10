@@ -50,7 +50,7 @@ public class JobTest {
                 new Location("Desert"),
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        assertFalse(newTestJob1.equals(newTestJob2));
+        assertFalse(newTestJob1.getId() == newTestJob2.getId());
 
     }
 
