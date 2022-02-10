@@ -71,6 +71,21 @@ public class Job {
         return coreCompetency;
     }
 
+    @Override
+    public String toString() {
+
+
+
+        return "\n" + "Job" +
+                "id:" + id +
+                ", name:" + name +
+                ", employer:" + employer +
+                ", location:" + location +
+                ", positionType:" + positionType +
+                ", coreCompetency:" + coreCompetency +
+                "\n";
+    }
+
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.

@@ -54,4 +54,14 @@ public class JobTest {
 
     }
 
+    @Test
+    public void testToString(){
+        assertTrue(job1.toString().startsWith("\n") & job1.toString().endsWith("\n"));
+        assertTrue(job1.toString().contains("name:" + job1.getName()));
+        assertTrue(job1.toString().contains("employer:" + job1.getEmployer()));
+        assertTrue(job1.toString().contains("location:" + job1.getLocation()));
+        assertTrue(job1.toString().contains("positionType:" + job1.getPositionType()));
+        assertTrue(job1.toString().contains("coreCompetency:" + job1.getCoreCompetency()));
+    }
+
 }
