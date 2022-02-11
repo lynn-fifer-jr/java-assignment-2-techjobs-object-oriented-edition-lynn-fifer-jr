@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -74,16 +76,52 @@ public class Job {
     @Override
     public String toString() {
 
+        ArrayList<String> fields = new ArrayList<>();
+        fields.add(employer.getValue());
+        fields.add(location.getValue());
+        fields.add(positionType.getValue());
+        fields.add(coreCompetency.getValue());
+
+        String dataNF = "Data not found";
+
+        if (name.equals("")) {
+            name = dataNF;
+        }
+
+        if (employer.getValue().equals("")) {
+            employer.setValue(dataNF);
+        }
+
+        if (location.getValue().equals("")) {
+            location.setValue(dataNF);
+        }
+
+        if (positionType.getValue().equals("")) {
+            positionType.setValue(dataNF);
+        }
+
+        if (coreCompetency.getValue().equals("")) {
+            coreCompetency.setValue(dataNF);
+        }
+
+        if (name.equals(dataNF) &
+                employer.getValue().equals(dataNF) &
+                location.getValue().equals(dataNF) &
+                positionType.getValue().equals(dataNF) &
+                coreCompetency.getValue().equals(dataNF)) {
+            return "OOPS! This job does not exist";
+        } else {
 
 
-        return "\n" + "Job" +
-                "id:" + id +
-                ", name:" + name +
-                ", employer:" + employer +
-                ", location:" + location +
-                ", positionType:" + positionType +
-                ", coreCompetency:" + coreCompetency +
-                "\n";
+            return "\n" + "Job " +
+                    "ID: " + id +
+                    "\n name: " + name +
+                    "\n employer: " + employer +
+                    "\n location: " + location +
+                    "\n positionType: " + positionType +
+                    "\n coreCompetency: " + coreCompetency +
+                    "\n";
+        }
     }
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
