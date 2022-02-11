@@ -56,15 +56,22 @@ public class JobTest {
 
     @Test
     public void testToString(){
+
+        Job jobTest = new Job("Best one",
+                new Employer("ACME"),
+                new Location("Desert"),
+                new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+
 //        toString should return string with a blank line before and after job information
-        assertTrue(job1.toString().startsWith("\n") & job1.toString().endsWith("\n"));
+        assertTrue(jobTest.toString().startsWith("\n") & jobTest.toString().endsWith("\n"));
 
 //        returned string should contain label and data for each field
-        assertTrue(job1.toString().contains("name: " + job1.getName()));
-        assertTrue(job1.toString().contains("employer: " + job1.getEmployer()));
-        assertTrue(job1.toString().contains("location: " + job1.getLocation()));
-        assertTrue(job1.toString().contains("positionType: " + job1.getPositionType()));
-        assertTrue(job1.toString().contains("coreCompetency: " + job1.getCoreCompetency()));
+        assertTrue(jobTest.toString().contains("name: " + jobTest.getName()));
+        assertTrue(jobTest.toString().contains("employer: " + jobTest.getEmployer()));
+        assertTrue(jobTest.toString().contains("location: " + jobTest.getLocation()));
+        assertTrue(jobTest.toString().contains("positionType: " + jobTest.getPositionType()));
+        assertTrue(jobTest.toString().contains("coreCompetency: " + jobTest.getCoreCompetency()));
     }
 
 }

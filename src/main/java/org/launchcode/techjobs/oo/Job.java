@@ -76,12 +76,6 @@ public class Job {
     @Override
     public String toString() {
 
-        ArrayList<String> fields = new ArrayList<>();
-        fields.add(employer.getValue());
-        fields.add(location.getValue());
-        fields.add(positionType.getValue());
-        fields.add(coreCompetency.getValue());
-
         String dataNF = "Data not found";
 
         if (name.equals("")) {
