@@ -2,7 +2,6 @@ package Tests;
 
 import org.junit.Test;
 import org.launchcode.techjobs.oo.*;
-
 import static org.junit.Assert.*;
 
 public class JobTest {
