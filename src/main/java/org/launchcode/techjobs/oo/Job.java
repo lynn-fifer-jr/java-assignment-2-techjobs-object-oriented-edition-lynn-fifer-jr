@@ -1,10 +1,10 @@
 package org.launchcode.techjobs.oo;
 
 
-import java.util.ArrayList;
+
 import java.util.Objects;
 
-public class Job {
+public class Job extends JobField{
 
     private int id;
     private static int nextId = 1;
