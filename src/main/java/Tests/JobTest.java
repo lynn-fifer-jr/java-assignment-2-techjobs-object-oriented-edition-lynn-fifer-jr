@@ -17,11 +17,7 @@ public class JobTest {
             new PositionType("Quality control"),
             new CoreCompetency("Persistence"));
 
-    Job testJob2 = new Job("test job",
-            new Employer(""),
-            new Location(""),
-            new PositionType(""),
-            new CoreCompetency(""));
+
 
     @Test
     public void testSettingJobId(){
@@ -87,8 +83,36 @@ public class JobTest {
     @Test
     public void testFieldIsEmpty(){
 
+        // empty fields should return 'data not found'
 
+        Job anotherTestJob = new Job("",
+                new Employer("ACME"),
+                new Location(""),
+                new PositionType(""),
+                new CoreCompetency(""));
 
+        Job testJob2 = new Job("name",
+                new Employer(""),
+                new Location(""),
+                new PositionType(""),
+                new CoreCompetency(""));
+
+        assertTrue(anotherTestJob.toString().contains("name: " + dataNF));
+        assertTrue(testJob2.toString().contains("employer: " + dataNF));
+        assertTrue(testJob2.toString().contains("location: " + dataNF));
+        assertTrue(testJob2.toString().contains("positionType: " + dataNF));
+        assertTrue(testJob2.toString().contains("coreCompetency: " + dataNF));
+
+    }
+
+    @Test
+    public void testJobExists(){
+        Job testJob =  new Job("",
+                new Employer(""),
+                new Location(""),
+                new PositionType(""),
+                new CoreCompetency(""));
+        assertEquals("OOPS! This job does not exist", testJob.toString());
     }
 
 }
