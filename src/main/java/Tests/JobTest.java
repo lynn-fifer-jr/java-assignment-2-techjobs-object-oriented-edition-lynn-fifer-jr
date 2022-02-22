@@ -9,6 +9,20 @@ public class JobTest {
     Job job1 = new Job();
     Job job2 = new Job();
 
+    String dataNF = "Data not found";
+
+    Job testJob = new Job("Product tester",
+            new Employer("ACME"),
+            new Location("Desert"),
+            new PositionType("Quality control"),
+            new CoreCompetency("Persistence"));
+
+    Job testJob2 = new Job("test job",
+            new Employer(""),
+            new Location(""),
+            new PositionType(""),
+            new CoreCompetency(""));
+
     @Test
     public void testSettingJobId(){
         assertEquals(job2.getId(), (job1.getId() + 1));
@@ -17,11 +31,7 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields(){
-        Job testJob = new Job("Product tester",
-                new Employer("ACME"),
-                new Location("Desert"),
-                new PositionType("Quality control"),
-                new CoreCompetency("Persistence"));
+
 
 //        Constructor should assign values
         assertEquals(testJob.getName(), "Product tester");
@@ -56,21 +66,29 @@ public class JobTest {
     @Test
     public void testToString(){
 
-        Job jobTest = new Job("Best one",
-                new Employer("ACME"),
-                new Location("Desert"),
-                new PositionType("Quality control"),
-                new CoreCompetency("Persistence"));
-
 //        toString should return string with a blank line before and after job information
-        assertTrue(jobTest.toString().startsWith("\n") & jobTest.toString().endsWith("\n"));
+        assertTrue(testJob.toString().startsWith("\n") & testJob.toString().endsWith("\n"));
+
+    }
+
+    @Test
+    public void testToStringLabel(){
+
 
 //        returned string should contain label and data for each field
-        assertTrue(jobTest.toString().contains("name: " + jobTest.getName()));
-        assertTrue(jobTest.toString().contains("employer: " + jobTest.getEmployer()));
-        assertTrue(jobTest.toString().contains("location: " + jobTest.getLocation()));
-        assertTrue(jobTest.toString().contains("positionType: " + jobTest.getPositionType()));
-        assertTrue(jobTest.toString().contains("coreCompetency: " + jobTest.getCoreCompetency()));
+        assertTrue(testJob.toString().contains("name: " + testJob.getName()));
+        assertTrue(testJob.toString().contains("employer: " + testJob.getEmployer()));
+        assertTrue(testJob.toString().contains("location: " + testJob.getLocation()));
+        assertTrue(testJob.toString().contains("positionType: " + testJob.getPositionType()));
+        assertTrue(testJob.toString().contains("coreCompetency: " + testJob.getCoreCompetency()));
+
+    }
+
+    @Test
+    public void testFieldIsEmpty(){
+
+
+
     }
 
 }
